@@ -1,7 +1,13 @@
 import "./App.css";
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+import { Home } from "../src/Components/Home/Home";
 
 export const App = () => {
   return (
-    <div>App</div>
-  )
+    <BrowserRouter>
+    <Routes>
+    <Route path="/" element={<Home />} />
+    </Routes>
+    </BrowserRouter>
+  ) 
 }
