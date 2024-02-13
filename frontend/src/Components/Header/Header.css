@@ -1,12 +1,28 @@
 .logo {
-    height: 100px;
-    width: auto;
-    display: flex;
-    justify-content: center;
+  height: 100px;
+  width: auto;
+  align-items: center;
+  border: none;
+  background: transparent;
 }
 
-.buscador{
-    width: auto;
-    height: 45px;
-    display: flex;
+.buscador {
+  width: 150px;
+  height: 30px;
+  background-color: #F1E9DD;
+  color: #69131F;
+  border-radius: 30px;
+  border:none;
+  padding: 0 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  
+
+
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
