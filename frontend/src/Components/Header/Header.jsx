@@ -10,7 +10,7 @@ export const Header = () => {
         </button>
         <input className="buscador" type="text" placeholder="Buscar..." />
       </main>
-      <hr />
+      <hr className="hr" />
     </>
   );
 };
