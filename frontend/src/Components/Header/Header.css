@@ -2,4 +2,11 @@
     height: 100px;
     width: auto;
     display: flex;
+    justify-content: center;
+}
+
+.buscador{
+    width: auto;
+    height: 45px;
+    display: flex;
 }
