@@ -4,7 +4,17 @@ import { useState } from "react";
 
 export const Header = () => {
   const [search, setSearch] = useState("");
+  const [books, setBooks] = useState([]);
 
+  const URL = "http://localhost:8080/libros";
+
+  const showBooks = async () => {
+    const response = await fetch(URL);
+    const books = await response.json();
+    console.log(books);
+  };
+  showBooks()
+  
   return (
     <>
       <main className="container">
