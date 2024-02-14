@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping ("/books")
-
 public class BookController {
     @Autowired
     private BookService bookService;
@@ -27,7 +26,8 @@ public class BookController {
 
     @GetMapping("/{id}")
     public Optional<Book> findById(@PathVariable Long id) {
-        return bookService.findById(id);
+    return bookService.findById(id);
+
     }
 
     @GetMapping("/{title}")
