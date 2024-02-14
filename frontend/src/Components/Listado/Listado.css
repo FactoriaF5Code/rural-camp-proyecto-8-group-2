@@ -1,0 +1,9 @@
+.containerCategorias {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.containerCategorias__unicoLibro {
+    display: flex;
+    justify-content: space-evenly;
+}

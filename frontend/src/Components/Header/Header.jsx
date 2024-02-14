@@ -2,18 +2,14 @@ import "./Header.css";
 import Logo from "../../assets/logo.svg";
 import { useState } from "react";
 
-export const Header = () => {
+export const Header = ({onSearch}) => {
   const [search, setSearch] = useState("");
-  const [books, setBooks] = useState([]);
 
-  const URL = "http://localhost:8080/libros";
-
-  const showBooks = async () => {
-    const response = await fetch(URL);
-    const books = await response.json();
-    console.log(books);
+  const handleSearchInput = (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    setSearch(searchTerm);
+    onSearch(searchTerm);
   };
-  showBooks()
   
   return (
     <>
@@ -21,7 +17,7 @@ export const Header = () => {
         <button className="logo">
           <img src={Logo} alt="logo" />
         </button>
-        <input className="buscador" type="text" placeholder="Buscar..." />
+        <input className="buscador" type="text" value={search}  onChange={handleSearchInput} placeholder="Buscar..." />
       </main>
       <hr className="hr" />
     </>
