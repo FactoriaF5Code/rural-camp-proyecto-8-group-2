@@ -6,8 +6,9 @@ export default function Listado({ searchTerm }) {
 
   return (
     <>
-    <div className="containerCategorias">
-      <h3>Título</h3> <h3>autor</h3>
+      <div className="containerCategorias">
+        <h3 className="containerCategorias__titulo">TÍTULO</h3>{" "}
+        <h3 className="containerCategorias__autor">AUTOR</h3>
       </div>
       {libros.map((book) => {
         if (
@@ -17,12 +18,12 @@ export default function Listado({ searchTerm }) {
         ) {
           return (
             <>
-              <hr />
+              <hr className="listado__hr"/>
               <div className="containerCategorias__unicoLibro" key={book.id}>
-                <p>{book.titulo}</p>
-                <p>{book.autor}</p>
+                <p className="unicoLibro__titulo">{book.titulo}</p>
+                <p className="unicoLibro__autor">{book.autor}</p>
               </div>
-              <hr />
+              
             </>
           );
         } else {
