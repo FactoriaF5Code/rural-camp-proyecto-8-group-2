@@ -26,12 +26,7 @@ public class BookController {
 
     @GetMapping("/id/{id}")
     public Optional<Book> findById(@PathVariable Long id) {
-    return bookService.findById(id);
-
+        return bookService.findById(id);
     }
 
-    @GetMapping("/title/{title}")
-    public List<Book> findByTitle(@PathVariable String title) {
-        return bookService.findByTitle(title);
-    }
 }
