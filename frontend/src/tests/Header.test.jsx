@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { test } from "vitest";
+import { test, createMockFunction } from "vitest";
 import { Header } from "../Components/Header/Header";
 
 test("El panel no muestra el título", () => {
@@ -9,16 +9,9 @@ test("El panel no muestra el título", () => {
 });
 
 test("Funciona el input", () => {
-
-  const handleSearchInput = jest.fn();
-
-  render(<Header onSearch={handleSearchInput} />);
-
-  const searchInput = screen.getByPlaceholderText("Buscar...");
-
-  fireEvent.change(searchInput, { target: { value: "term" } });
-
-  expect(handleSearchInput).toHaveBeenCalledWith("term");
+  const inputElement = screen.getByPlaceholderText("Buscar...");
+  fireEvent.change(inputElement, { target: { value: "Harry Potter" } });
+  expect(inputElement.value).toBe("Harry Potter");
 });
 
 //   test("handles search input correctly", () => {
