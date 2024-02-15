@@ -1,9 +1,20 @@
 import "./Listado.css";
 import { useDataContext } from "../DataContext/DataContext";
 import Modal from '../Modal/Modal';
+import { useState } from "react";
 
 export default function Listado({ searchTerm }) {
   const { libros } = useDataContext();
+  const [selectedBook, setSelectedBook] = useState(null);
+
+
+  const openModal = (book) => {
+    setSelectedBook(book);
+  };
+
+  const closeModal = () => {
+    setSelectedBook(null);
+  };
 
   return (
     <>
@@ -20,10 +31,9 @@ export default function Listado({ searchTerm }) {
           return (
             <>
               <hr className="listado__hr"/>
-              <div className="containerCategorias__unicoLibro" key={book.id}>
+              <div className="containerCategorias__unicoLibro" key={book.id} onClick={() => openModal(book)}>
                 <p className="unicoLibro__titulo">{book.titulo}</p>
                 <p className="unicoLibro__autor">{book.autor}</p>
-                < Modal/>
               </div>
               
             </>
@@ -32,6 +42,9 @@ export default function Listado({ searchTerm }) {
           return null;
         }
       })}
+      {selectedBook && (
+        <Modal libro={selectedBook} onClose={closeModal}/>
+      )}
     </>
   );
 }
