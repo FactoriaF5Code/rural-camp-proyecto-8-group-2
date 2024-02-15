@@ -1,7 +1,64 @@
+.contenedorModal {
+  width: 50rem;
+  height: 50rem;
+  background-color: #69131f;
 
+  position: fixed;
+  border-radius: 10px;
+}
 
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Negro semi-transparente */
+  z-index: 999; /* Asegura que esté por debajo del modal */
+}
+.contenedorModal__content {
+    width: 50rem;
+    height: 50rem;
+}
 
-.containerInputText {
-    display: flex;
-    flex-direction: column;
+.contenedorButton__cerrar {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+
+.cerrarModal {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.contenedorInformación {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50rem;
+  height: 50rem;
+}
+
+.inputInfo {
+  background-color: #f1e9dd;
+  border-radius: 5px;
+  width: 500px;
+  height: 70px;
+}
+
+.h2Info {
+  color: #f1e9dd;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::placeholder {
+    color: #69131F;
+    font-size: 25px;
+    font-weight: bold;
 }

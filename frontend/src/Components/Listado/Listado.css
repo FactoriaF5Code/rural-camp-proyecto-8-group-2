@@ -54,3 +54,10 @@
 .listado__hr {
   margin: 0;
 }
+
+.contenedorModal__componente {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}

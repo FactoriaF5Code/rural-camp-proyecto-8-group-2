@@ -43,7 +43,9 @@ export default function Listado({ searchTerm }) {
         }
       })}
       {selectedBook && (
+        <div className="contenedorModal__componente">
         <Modal libro={selectedBook} onClose={closeModal}/>
+        </div>
       )}
     </>
   );

@@ -1,16 +1,26 @@
-import { InputText } from "primereact/inputtext";
-import { InputTextarea } from "primereact/inputtextarea";
+import cruz from "../../assets/cruz.png";
 import "./Modal.css";
 
 export default function Modal({ libro, onClose }) {
   return (
-    <section className="contenedorModal">
-      <div className="contenedorModal__content">
-        <button className="cerrarModal" onClick={onClose}>
-          Cerrar
-        </button>
-        <p>{libro.titulo}</p>
-      </div>
+    <section className="overlay">
+      <section className="contenedorModal">
+        <div className="contenedorModal__content">
+          <div className="contenedorButton__cerrar">
+            <button className="cerrarModal" onClick={onClose}>
+              <img src={cruz} alt="x" />
+            </button>
+          </div>
+          <div className="contenedorInformación">
+            <h2 className="h2Info">TÍTULO</h2>
+            <input className="inputInfo" type="text"  placeholder={libro.titulo} />
+            <h2 className="h2Info">AUTOR</h2>
+            <input className="inputInfo" type="text" placeholder={libro.autor} />
+            <h2 className="h2Info">SINOPSIS</h2>
+            <input className="inputInfo" type="text"  placeholder={libro.sinopsis}/>
+          </div>
+        </div>
+      </section>
     </section>
   );
 }
