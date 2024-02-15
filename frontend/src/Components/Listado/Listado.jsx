@@ -1,5 +1,6 @@
 import "./Listado.css";
 import { useDataContext } from "../DataContext/DataContext";
+import Modal from '../Modal/Modal';
 
 export default function Listado({ searchTerm }) {
   const { libros } = useDataContext();
@@ -22,6 +23,7 @@ export default function Listado({ searchTerm }) {
               <div className="containerCategorias__unicoLibro" key={book.id}>
                 <p className="unicoLibro__titulo">{book.titulo}</p>
                 <p className="unicoLibro__autor">{book.autor}</p>
+                < Modal/>
               </div>
               
             </>
