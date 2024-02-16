@@ -37,10 +37,10 @@ public class BookController {
         bookService.deleteById(id);
     }
 
-    @PostMapping
+    /*@PostMapping
     public Book create(@RequestBody Book book) {
         return bookService.save(book);
-    }
+    }*/
 
 
 }
