@@ -2,6 +2,7 @@ import "./Listado.css";
 import { useDataContext } from "../DataContext/DataContext";
 import Modal from '../Modal/Modal';
 import { useState } from "react";
+import ModalAlert from "../ModalAlert/ModalAlert";
 
 export default function Listado({ searchTerm }) {
   const { libros } = useDataContext();
@@ -45,6 +46,7 @@ export default function Listado({ searchTerm }) {
       {selectedBook && (
         <div className="contenedorModal__componente">
         <Modal libro={selectedBook} onClose={closeModal}/>
+        <ModalAlert/>
         </div>
       )}
     </>

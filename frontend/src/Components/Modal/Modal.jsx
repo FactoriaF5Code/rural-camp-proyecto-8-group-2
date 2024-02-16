@@ -3,10 +3,8 @@ import papelera from "../../assets/papelera.png";
 import "./Modal.css";
 import { useDataContext } from "../DataContext/DataContext";
 
-
 export default function Modal({ libro, onClose }) {
-const {DeleteBook} = useDataContext();
-const mensajeAlerta = document.getElementById ("mensajeAlerta");
+  const { DeleteBook } = useDataContext();
 
   const acortarSinopsis = (sinopsis) => {
     if (sinopsis && sinopsis.length > 250) {
@@ -40,7 +38,13 @@ const mensajeAlerta = document.getElementById ("mensajeAlerta");
                 {acortarSinopsis(libro.synopsis)}
               </section>
               <article className="contenedorBotonDescatalogar">
-                <button className="descatalogar" onClick={DeleteBook(libro.id)}>
+                <button
+                  className="descatalogar"
+                  onClick={() => {
+                    DeleteBook(libro.id);
+                    onClose();
+                  }}
+                >
                   DESCATALOGAR
                   <img className="papelera" src={papelera} alt="delete" />
                 </button>
@@ -48,10 +52,6 @@ const mensajeAlerta = document.getElementById ("mensajeAlerta");
             </div>
           </div>
         </div>
-      </section>
-      <section id="mensajeAlerta">
-        <p>Libro descatalogado con exito</p>
-        <button>ok</button>
       </section>
     </section>
   );
