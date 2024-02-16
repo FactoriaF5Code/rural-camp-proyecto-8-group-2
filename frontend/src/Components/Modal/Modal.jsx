@@ -2,6 +2,15 @@ import cruz from "../../assets/cruz.png";
 import "./Modal.css";
 
 export default function Modal({ libro, onClose }) {
+
+  const acortarSinopsis = (sinopsis) => {
+    if (sinopsis && sinopsis.length > 250) {
+      return sinopsis.substring(0, 250) + "...";
+    } else {
+      return sinopsis;
+    }
+  };
+
   return (
     <section className="overlay">
       <section className="contenedorModal">
@@ -21,9 +30,9 @@ export default function Modal({ libro, onClose }) {
               <section className="inputInfo">{libro.author}</section>
             </div>
             <div className="h2Input">
-              <h2 className="h2Info">SINOPSIS</h2>
+              <h2 className="h2Info" >SINOPSIS</h2>
               <section className="inputInfo__sinopsis">
-                {libro.synopsis}
+                {acortarSinopsis(libro.synopsis)}
               </section>
             </div>
           </div>
