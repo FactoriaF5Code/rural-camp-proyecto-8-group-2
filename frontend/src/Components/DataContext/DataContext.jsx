@@ -4,8 +4,20 @@ import { useFetch } from "../../useFetch";
 const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-  const { data } = useFetch();
+  const { data, url, setNeedsReload } = useFetch();
   const [libros, setLibros] = useState([]);
+
+  const DeleteBook = (id) => {
+    fetch(`${url}/${id}`, {
+      method: "DELETE",
+    })
+      .then(() => {
+        setNeedsReload(true);
+      })
+      .catch((error) => {
+        console.error("error al borrar", error);
+      });
+  };
 
   useEffect(() => {
     if (data) {
@@ -14,7 +26,8 @@ export const DataProvider = ({ children }) => {
   }, [data]);
 
   const value = {
-    libros
+    libros,
+    DeleteBook
   };
 
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>;

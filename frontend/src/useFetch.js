@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 
-const url = "http://localhost:8080/books";
+
 
 export function useFetch() {
+  const url = "http://localhost:8080/books";
   const [data, setData] = useState(null);
   const [needsReload, setNeedsReload] = useState(true);
 
@@ -18,5 +19,5 @@ export function useFetch() {
 }, [needsReload]);
       
   
-  return { data };
+  return { data, url, setNeedsReload};
 }

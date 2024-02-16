@@ -1,8 +1,12 @@
 import cruz from "../../assets/cruz.png";
 import papelera from "../../assets/papelera.png";
 import "./Modal.css";
+import { useDataContext } from "../DataContext/DataContext";
+
 
 export default function Modal({ libro, onClose }) {
+const {DeleteBook} = useDataContext();
+
   const acortarSinopsis = (sinopsis) => {
     if (sinopsis && sinopsis.length > 250) {
       return sinopsis.substring(0, 250) + "...";
@@ -35,7 +39,7 @@ export default function Modal({ libro, onClose }) {
                 {acortarSinopsis(libro.synopsis)}
               </section>
               <article className="contenedorBotonDescatalogar">
-                <button className="descatalogar">
+                <button className="descatalogar" onClick={DeleteBook(libro.id)}>
                   DESCATALOGAR
                   <img className="papelera" src={papelera} alt="delete" />
                 </button>
