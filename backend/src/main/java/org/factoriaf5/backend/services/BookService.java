@@ -34,8 +34,8 @@ public class BookService {
         return bookRepository.findByTitle(title);
     }
 
-    /*public boolean verificarDisponibilidad(Long id) {
+    public boolean verificarDisponibilidad(Long id) {
         Book book = bookRepository.findById(id).orElse(null);
         return book != null && book.isDisponible();
-    }*/
+    }
 }

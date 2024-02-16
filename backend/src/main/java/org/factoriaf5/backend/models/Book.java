@@ -12,15 +12,19 @@ public class Book {
     String title;
     String author;
     String synopsis;
-    
+    Boolean state;
+
+
     public Book() {
     }
 
-    public Book(Long id, String title, String author, String synopsis) {
+    public Book(Long id, String title, String author, String synopsis, Boolean state) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.synopsis = synopsis;
+        this.state = state;
+
     }
 
     public Long getId() {
@@ -34,6 +38,9 @@ public class Book {
     }
     public String getSynopsis() {
         return synopsis;
+    }
+    public Boolean getState() {
+        return state;
     }
 
 
@@ -49,4 +56,12 @@ public class Book {
     public void setSynopsis(String synopsis) {
         this.synopsis = synopsis;
     }
+    public void setState(Boolean state) {
+        this.state = state;
+    }
+
+    public boolean isDisponible() {
+        throw new UnsupportedOperationException("Unimplemented method 'isDisponible'");
+    }
+
 }
