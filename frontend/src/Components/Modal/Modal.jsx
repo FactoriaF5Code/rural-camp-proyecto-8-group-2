@@ -12,12 +12,20 @@ export default function Modal({ libro, onClose }) {
             </button>
           </div>
           <div className="contenedorInformación">
-            <h2 className="h2Info">TÍTULO</h2>
-            <input className="inputInfo" type="text"  placeholder={libro.title} />
-            <h2 className="h2Info">AUTOR</h2>
-            <input className="inputInfo" type="text" placeholder={libro.author} />
-            <h2 className="h2Info">SINOPSIS</h2>
-            <input className="inputInfo" type="text"  placeholder={libro.synopsis}/>
+            <div className="h2Input">
+              <h2 className="h2Info">TÍTULO</h2>
+              <section className="inputInfo">{libro.title}</section>
+            </div>
+            <div className="h2Input">
+              <h2 className="h2Info">AUTOR</h2>
+              <section className="inputInfo">{libro.author}</section>
+            </div>
+            <div className="h2Input">
+              <h2 className="h2Info">SINOPSIS</h2>
+              <section className="inputInfo__sinopsis">
+                {libro.synopsis}
+              </section>
+            </div>
           </div>
         </div>
       </section>

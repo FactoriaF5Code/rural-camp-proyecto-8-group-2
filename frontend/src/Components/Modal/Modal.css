@@ -1,8 +1,7 @@
 .contenedorModal {
-  width: 50rem;
-  height: 50rem;
+  width: 30rem;
+  height: 30rem;
   background-color: #69131f;
-
   position: fixed;
   border-radius: 10px;
 }
@@ -19,15 +18,16 @@
   background-color: rgba(0, 0, 0, 0.5); /* Negro semi-transparente */
   z-index: 999; /* Asegura que esté por debajo del modal */
 }
+
 .contenedorModal__content {
-    width: 50rem;
-    height: 50rem;
+  width: 30rem;
+  height: 30rem;
 }
 
 .contenedorButton__cerrar {
   position: absolute;
   right: 40px;
-  top: 40px;
+  top: 30px;
 }
 
 .cerrarModal {
@@ -41,24 +41,41 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 50rem;
-  height: 50rem;
+  width: 30rem;
+  height: 30rem;
 }
 
 .inputInfo {
   background-color: #f1e9dd;
   border-radius: 5px;
-  width: 500px;
-  height: 70px;
+  width: 400px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #69131f;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  
+}
+
+.inputInfo__sinopsis {
+  background-color: #f1e9dd;
+  border-radius: 5px;
+  width: 400px;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #69131f;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 .h2Info {
   color: #f1e9dd;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: lighter;
 }
 
-::placeholder {
-    color: #69131F;
-    font-size: 25px;
-    font-weight: bold;
-}
