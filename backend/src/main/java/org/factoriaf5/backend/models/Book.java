@@ -60,8 +60,8 @@ public class Book {
         this.state = state;
     }
 
-    public boolean isDisponible() {
+    /*public boolean isDisponible() {
         throw new UnsupportedOperationException("Unimplemented method 'isDisponible'");
-    }
+    }*/
 
 }
