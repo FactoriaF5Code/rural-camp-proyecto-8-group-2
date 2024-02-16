@@ -7,6 +7,7 @@ import ModalAlert from "../ModalAlert/ModalAlert";
 export default function Listado({ searchTerm }) {
   const { libros } = useDataContext();
   const [selectedBook, setSelectedBook] = useState(null);
+  const mensajeAlerta = document.getElementById("mensajeAlerta");
 
 
   const openModal = (book) => {
@@ -15,6 +16,7 @@ export default function Listado({ searchTerm }) {
 
   const closeModal = () => {
     setSelectedBook(null);
+    mensajeAlerta.style.display = "block";
   };
 
   return (
@@ -45,8 +47,8 @@ export default function Listado({ searchTerm }) {
       })}
       {selectedBook && (
         <div className="contenedorModal__componente">
-        <Modal libro={selectedBook} onClose={closeModal}/>
-        <ModalAlert/>
+          <ModalAlert />
+          <Modal libro={selectedBook} onClose={closeModal}/>
         </div>
       )}
     </>
