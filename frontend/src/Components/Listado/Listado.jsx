@@ -25,15 +25,15 @@ export default function Listado({ searchTerm }) {
       {libros.map((book) => {
         if (
           !searchTerm ||
-          book.titulo.toLowerCase().includes(searchTerm) ||
-          book.autor.toLowerCase().includes(searchTerm)
+          book.title.toLowerCase().includes(searchTerm) ||
+          book.author.toLowerCase().includes(searchTerm)
         ) {
           return (
             <>
               <hr className="listado__hr"/>
               <div className="containerCategorias__unicoLibro" key={book.id} onClick={() => openModal(book)}>
-                <p className="unicoLibro__titulo">{book.titulo}</p>
-                <p className="unicoLibro__autor">{book.autor}</p>
+                <p className="unicoLibro__titulo">{book.title}</p>
+                <p className="unicoLibro__autor">{book.author}</p>
               </div>
               
             </>
