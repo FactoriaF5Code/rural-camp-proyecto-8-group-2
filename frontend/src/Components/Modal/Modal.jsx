@@ -6,6 +6,7 @@ import { useDataContext } from "../DataContext/DataContext";
 
 export default function Modal({ libro, onClose }) {
 const {DeleteBook} = useDataContext();
+const mensajeAlerta = document.getElementById ("mensajeAlerta");
 
   const acortarSinopsis = (sinopsis) => {
     if (sinopsis && sinopsis.length > 250) {
@@ -47,6 +48,10 @@ const {DeleteBook} = useDataContext();
             </div>
           </div>
         </div>
+      </section>
+      <section id="mensajeAlerta">
+        <p>Libro descatalogado con exito</p>
+        <button>ok</button>
       </section>
     </section>
   );
