@@ -1,8 +1,8 @@
 import cruz from "../../assets/cruz.png";
+import papelera from "../../assets/papelera.png";
 import "./Modal.css";
 
 export default function Modal({ libro, onClose }) {
-
   const acortarSinopsis = (sinopsis) => {
     if (sinopsis && sinopsis.length > 250) {
       return sinopsis.substring(0, 250) + "...";
@@ -30,10 +30,16 @@ export default function Modal({ libro, onClose }) {
               <section className="inputInfo">{libro.author}</section>
             </div>
             <div className="h2Input">
-              <h2 className="h2Info" >SINOPSIS</h2>
+              <h2 className="h2Info">SINOPSIS</h2>
               <section className="inputInfo__sinopsis">
                 {acortarSinopsis(libro.synopsis)}
               </section>
+              <article className="contenedorBotonDescatalogar">
+                <button className="descatalogar">
+                  DESCATALOGAR
+                  <img className="papelera" src={papelera} alt="delete" />
+                </button>
+              </article>
             </div>
           </div>
         </div>
