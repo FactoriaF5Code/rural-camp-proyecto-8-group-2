@@ -1,6 +1,8 @@
 import "./AddModal.css";
+import cruz from "../../assets/cruz.png"
 
-export default function AddModal() {
+export default function AddModal({ onClose }) {
+
   return (
     <section className="overlay">
       <section className="contenedorModal">
