@@ -6,7 +6,6 @@ import { useState } from "react";
 export default function Listado({ searchTerm }) {
   const { libros } = useDataContext();
   const [selectedBook, setSelectedBook] = useState(null);
-  const mensajeAlerta = document.getElementById("mensajeAlerta");
 
   const openModal = (book) => {
     setSelectedBook(book);
@@ -14,7 +13,6 @@ export default function Listado({ searchTerm }) {
 
   const closeModal = () => {
     setSelectedBook(null);
-    mensajeAlerta.style.display = "block";
   };
 
   return (

@@ -1,4 +1,4 @@
-/*import "./AddModal.css";
+import "./AddModal.css";
 
 export default function AddModal() {
   return (
@@ -15,4 +15,4 @@ export default function AddModal() {
       </section>
     </section>
   );
-}*/
+}
