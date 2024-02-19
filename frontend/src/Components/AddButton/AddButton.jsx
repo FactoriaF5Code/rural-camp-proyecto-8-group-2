@@ -1,11 +1,9 @@
-import addButton from "../../assets/add_boton.svg";
 import "./AddButton.css";
 import { useState } from "react";
 import AddModal from "../AddModal/AddModal";
-import { useFetch } from "../../useFetch";
+import { AddIcon } from "../../assets/AddIcon";
 
 export const AddButton = () => {
-  const {data, setNeedsReload} = useFetch();
   const [modalVisible, setModalVisible] = useState(false);
   
   const openModal = () => {
@@ -19,8 +17,10 @@ export const AddButton = () => {
   };
 
   return (
-    <section className="contenedoraddModal" >
-      <img className="addButton" src={addButton} alt="botonAdd" onClick={openModal}/>
+    <section className="contenedoraddModal">
+      <button className="addButton" onClick={openModal}>
+        <AddIcon className="addIcon" />
+      </button>
       {modalVisible && <AddModal onClose={closeModal} />}
     </section>
   );

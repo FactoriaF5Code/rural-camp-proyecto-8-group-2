@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "./Listado.css";
 import { useDataContext } from "../DataContext/DataContext";
 import Modal from "../Modal/Modal";
@@ -16,10 +17,11 @@ export default function Listado({ searchTerm }) {
   };
 
   return (
-    <>
+    <main className="listadoLibros">
       <div className="containerCategorias">
-        <h3 className="containerCategorias__titulo">TÍTULO</h3>{" "}
-        <h3 className="containerCategorias__autor">AUTOR</h3>
+        <h3> TÍTULO </h3>
+        <h3> AUTOR </h3>
+        <h3> DISPONIBILIDAD </h3>
       </div>
       {libros.map((book) => {
         if (
@@ -37,6 +39,11 @@ export default function Listado({ searchTerm }) {
               >
                 <p className="unicoLibro__titulo">{book.title}</p>
                 <p className="unicoLibro__autor">{book.author}</p>
+                {book.available ? (
+                  <div className="circuloVerde"></div>
+                ) : (
+                  <div className="circuloRojo"></div>
+                )}
               </div>
             </>
           );
@@ -49,6 +56,6 @@ export default function Listado({ searchTerm }) {
           <Modal libro={selectedBook} onClose={closeModal} />
         </div>
       )}
-    </>
+    </main>
   );
 }

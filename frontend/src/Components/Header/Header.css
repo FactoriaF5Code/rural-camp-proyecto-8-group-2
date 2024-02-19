@@ -1,7 +1,6 @@
 .logo {
   height: 100px;
   width: auto;
-  align-items: center;
   border: none;
   background: transparent;
 }
@@ -16,15 +15,14 @@
   padding: 0 15px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  position: absolute;
-  right: 0;
-  margin-right:110px;
 }
 
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding: 1% 5%;
 }
 
 .hr {
@@ -32,10 +30,4 @@
   height: 3px;
   background-color: #69131f;
   border-radius: 3px;
-}
-
-.addButtonContainer{
-  position: absolute;
-  left:80px;
-
 }

@@ -6,17 +6,28 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.listadoLibros {
+  width: 100%;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+}
+
 .containerCategorias {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  color: #69131f;
+  font-size: 24px;
 }
+
 
 .containerCategorias__unicoLibro {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100px;
+  font-size: 24px;
 }
 
 .containerCategorias__unicoLibro:hover {
@@ -24,35 +35,16 @@
   cursor: pointer;
 }
 
-.containerCategorias__titulo {
-  position: absolute;
-  left: 0;
-  margin-left: 130px;
-  color: #69131f;
-  font-size: 24px;
-}
-
-.containerCategorias__autor {
-  font-size: 24px;
-}
-
-.containerCategorias__autor {
-  color: #69131f;
+.listado__hr {
+  width: 100%;
 }
 
 .unicoLibro__titulo {
-  position: absolute;
-  left: 0;
-  margin-left: 130px;
-  font-size: 24px;
+  flex: 1;
 }
 
 .unicoLibro__autor {
-  font-size: 24px;
-}
-
-.listado__hr {
-  width: 90%;
+  flex: 1;
 }
 
 .contenedorModal__componente {
@@ -60,4 +52,18 @@
   justify-content: center;
   align-items: center;
   
+}
+
+.circuloVerde {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: green;
+}
+
+.circuloRojo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: red;
 }
