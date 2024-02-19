@@ -7,6 +7,28 @@ export const DataProvider = ({ children }) => {
   const { data, url, setNeedsReload } = useFetch();
   const [libros, setLibros] = useState([]);
 
+
+  const PostBook = async (newBook, url) => {
+    try {
+      const options = {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(newBook)
+      };
+      const response = await fetch(url, options);
+
+      if(response.ok) {
+        setNeedsReload(true);
+        alert("Realizado con exito");
+      }else {
+        alert("error al realizar la operación");
+      }
+    }catch (error) {
+      console.error("Error de red", error);
+    }
+  };
+
+
   const DeleteBook = (id) => {
     fetch(`${url}/${id}`, {
       method: "DELETE",
@@ -27,7 +49,8 @@ export const DataProvider = ({ children }) => {
 
   const value = {
     libros,
-    DeleteBook
+    DeleteBook,
+    PostBook
   };
 
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
