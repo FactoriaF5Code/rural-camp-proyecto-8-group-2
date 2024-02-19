@@ -43,8 +43,7 @@ export default function Modal({ libro, onClose }) {
                   onClick={() => {
                     DeleteBook(libro.id);
                     onClose();
-                  }}
-                >
+                  }}>
                   DESCATALOGAR
                   <img className="papelera" src={papelera} alt="delete" />
                 </button>
