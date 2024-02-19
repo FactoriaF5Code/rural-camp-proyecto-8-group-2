@@ -19,9 +19,9 @@ export default function Listado({ searchTerm }) {
   return (
     <main className="listadoLibros">
       <div className="containerCategorias">
-        <h3> TÍTULO </h3>
-        <h3> AUTOR </h3>
-        <h3> DISPONIBILIDAD </h3>
+        <h3 className="categoriaTitulo"> TÍTULO </h3>
+        <h3 className="categoriaAutor"> AUTOR </h3>
+        <h3 className="categoriaDisponibilidad"> DISPONIBILIDAD </h3>
       </div>
       {libros.map((book) => {
         if (
@@ -32,18 +32,16 @@ export default function Listado({ searchTerm }) {
           return (
             <>
               <hr className="listado__hr" />
-              <div
-                className="containerCategorias__unicoLibro"
-                key={book.id}
-                onClick={() => openModal(book)}
-              >
+              <div className="containerCategorias__unicoLibro" key={book.id} onClick={() => openModal(book)} >
                 <p className="unicoLibro__titulo">{book.title}</p>
                 <p className="unicoLibro__autor">{book.author}</p>
+                <div className="unicoLibro__disponibilidad">
                 {book.available ? (
                   <div className="circuloVerde"></div>
                 ) : (
                   <div className="circuloRojo"></div>
                 )}
+                </div>
               </div>
             </>
           );

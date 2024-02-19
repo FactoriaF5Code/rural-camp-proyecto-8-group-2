@@ -39,19 +39,24 @@
   width: 100%;
 }
 
-.unicoLibro__titulo {
-  flex: 1;
+.unicoLibro__titulo, .categoriaTitulo {
+  width: 50%;
 }
 
-.unicoLibro__autor {
-  flex: 1;
+.unicoLibro__autor, .categoriaAutor {
+  width: 40%;
+}
+
+.unicoLibro__disponibilidad, .categoriaDisponibilidad {
+  width: 10%;
+  display: flex;
+  justify-content: center;
 }
 
 .contenedorModal__componente {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 .circuloVerde {
