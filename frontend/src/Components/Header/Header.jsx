@@ -15,8 +15,11 @@ export const Header = ({onSearch}) => {
   
   return (
     <>
-    < AddButton/>
+    
       <main className="container">
+      <div className="addButtonContainer">
+      <AddButton />
+      </div>
         <button className="logo">
           <img src={Logo} alt="logo" />
         </button>

@@ -3,6 +3,6 @@ import './AddButton.css';
 
 export const AddButton = () => {
   return (
-   <img src={addButton} alt="botonAdd" />
+   <img className= "addButton" src={addButton}  alt="botonAdd" />
   )
 }

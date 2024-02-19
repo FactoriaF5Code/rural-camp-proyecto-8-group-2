@@ -33,3 +33,9 @@
   background-color: #69131f;
   border-radius: 3px;
 }
+
+.addButtonContainer{
+  position: absolute;
+  left:80px;
+
+}

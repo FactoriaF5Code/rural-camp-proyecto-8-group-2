@@ -1,14 +1,12 @@
 import "./Listado.css";
 import { useDataContext } from "../DataContext/DataContext";
-import Modal from '../Modal/Modal';
+import Modal from "../Modal/Modal";
 import { useState } from "react";
-
 
 export default function Listado({ searchTerm }) {
   const { libros } = useDataContext();
   const [selectedBook, setSelectedBook] = useState(null);
   const mensajeAlerta = document.getElementById("mensajeAlerta");
-
 
   const openModal = (book) => {
     setSelectedBook(book);
@@ -33,12 +31,15 @@ export default function Listado({ searchTerm }) {
         ) {
           return (
             <>
-              <hr className="listado__hr"/>
-              <div className="containerCategorias__unicoLibro" key={book.id} onClick={() => openModal(book)}>
+              <hr className="listado__hr" />
+              <div
+                className="containerCategorias__unicoLibro"
+                key={book.id}
+                onClick={() => openModal(book)}
+              >
                 <p className="unicoLibro__titulo">{book.title}</p>
                 <p className="unicoLibro__autor">{book.author}</p>
               </div>
-              
             </>
           );
         } else {
@@ -47,13 +48,7 @@ export default function Listado({ searchTerm }) {
       })}
       {selectedBook && (
         <div className="contenedorModal__componente">
-<<<<<<< HEAD
-        <Modal libro={selectedBook} onClose={closeModal}/>
-        
-=======
-          <ModalAlert />
-          <Modal libro={selectedBook} onClose={closeModal}/>
->>>>>>> 729175ca7a008cdb8dc1f2fa5ce2ad9a295516b3
+          <Modal libro={selectedBook} onClose={closeModal} />
         </div>
       )}
     </>
