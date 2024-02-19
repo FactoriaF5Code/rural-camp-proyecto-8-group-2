@@ -15,21 +15,25 @@ export default function AddModal({ onClose }) {
 
   function crearLibroYCerrar() {
     onClose();
-    PostBook(newBook, "http://localhost:8080/books");
-    setNewBook({ title: "", author: "", synopsis: "" });
+    PostBook(newBook, "http://localhost:8080/books")
+      .then(() => {
+        setNewBook({ title: "", author: "", synopsis: "" });
+        onClose();
+      })
+      .catch((error) => {
+        console.error("Error al guardar el libro:", error);
+      });
   }
 
   return (
-    <>
-      <section className="overlay">
-        <section className="contenedorModal">
-          <div className="contenedorModal__content">
-            <div className="contenedorButton__cerrar">
-              <button className="cerrarModal" onClick={onClose}>
-                <img src={cruz} alt="x" />
-              </button>
-            </div>
-            <h2>Título</h2>
+    <main className="overlay">
+      <div className="contenedorAñadirLibro">
+          <button className="cerrarModal" onClick={onClose}>
+            <img src={cruz} alt="x" />
+          </button>
+        <div>
+          <section className="newInfoLibro">
+            <h2>TÍTULO</h2>
             <input
               type="text"
               value={newBook.title}
@@ -38,7 +42,9 @@ export default function AddModal({ onClose }) {
               }
               placeholder="Introduce el título..."
             />
-            <h2>Autor</h2>
+          </section>
+          <section className="newInfoLibro">
+            <h2>AUTOR</h2>
             <input
               type="text"
               value={newBook.author}
@@ -47,8 +53,11 @@ export default function AddModal({ onClose }) {
               }
               placeholder="Introduce el autor..."
             />
-            <h2>Sinopsis</h2>
+          </section>
+          <section className="newInfoLibro">
+            <h2>SINOPSIS</h2>
             <input
+              id="newSynopsis"
               type="text"
               value={newBook.synopsis}
               onChange={(e) =>
@@ -56,13 +65,13 @@ export default function AddModal({ onClose }) {
               }
               placeholder="Introduce la Sinopsis del libro..."
             />
-            <button onClick={crearLibroYCerrar}>
-              <img src={guardar} alt="guardar" />
-              Guardar
-            </button>
-          </div>
-        </section>
-      </section>
-    </>
+          </section>
+        </div>
+        <button className="guardarNewLibro" onClick={crearLibroYCerrar}>
+          <img src={guardar} alt="guardar" />
+          Guardar
+        </button>
+      </div>
+    </main>
   );
 }
