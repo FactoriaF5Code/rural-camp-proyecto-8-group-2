@@ -1,6 +1,8 @@
 import "./Header.css";
 import Logo from "../../assets/logo.svg";
 import { useState } from "react";
+import { AddButton } from "../AddButton/AddButton";
+
 
 export const Header = ({onSearch}) => {
   const [search, setSearch] = useState("");
@@ -13,6 +15,7 @@ export const Header = ({onSearch}) => {
   
   return (
     <>
+    < AddButton/>
       <main className="container">
         <button className="logo">
           <img src={Logo} alt="logo" />
