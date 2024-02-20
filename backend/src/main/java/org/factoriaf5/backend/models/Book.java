@@ -64,8 +64,5 @@ public class Book {
         this.available = available;
     }
 
-    /*public boolean isDisponible() {
-        throw new UnsupportedOperationException("Unimplemented method 'isDisponible'");
-    }*/
 
 }

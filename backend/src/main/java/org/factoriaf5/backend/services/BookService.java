@@ -45,9 +45,4 @@ public class BookService {
             return false;
         }
     }
-
-    /*public boolean verificarDisponibilidad(Long id) {
-        Book book = bookRepository.findById(id).orElse(null);
-        return book != null && book.isDisponible();
-    }*/
 }
