@@ -1,0 +1,62 @@
+.contenedorAñadirLibro {
+    width: 30rem;
+    height: 30rem;
+    padding: 2rem;
+    background-color: #69131f;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .contenedorAñadirLibro button {
+    align-self: flex-end;
+}
+
+.newInfoLibro input {
+    background-color: #f1e9dd;
+    border-radius: 5px;
+    width: 400px;
+    height: 30px;
+    padding: 10px;
+    color: #69131f;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    text-align: start;
+}
+
+.newInfoLibro h2 {
+    color: #f1e9dd;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+#newSynopsis {
+    height: 120px;
+}
+
+.guardarNewLibro {
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    background: #ef7d60;
+    border: none;
+    font-size: 16px;
+    color: #69131f;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .guardarNewLibro img {
+    width: 28px;
+  }
